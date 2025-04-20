@@ -1,4 +1,5 @@
 public class Mahasiswa {
+
     String NIM, nama, prodi;
     static Mahasiswa[] daftarMahasiswa = {
         new Mahasiswa("22001", "Ali Rahman", "Informatika"),
@@ -13,7 +14,7 @@ public class Mahasiswa {
     }
 
     public void tampilMahasiswa() {
-        System.out.println("NIM: " + NIM + " | Nama: " + nama + " | Prodi: " + prodi);
+        System.out.println("NIM : " + NIM + " | Nama : " + nama + " | Prodi : " + prodi);
     }
 
     public static void tampilkanSemua() {
@@ -21,11 +22,5 @@ public class Mahasiswa {
             m.tampilMahasiswa();
         }
     }
-
-    public static Mahasiswa cariByNIM(String nim) {
-        for (Mahasiswa m : daftarMahasiswa) {
-            if (m.NIM.equals(nim)) return m;
-        }
-        return null;
-    }
+    
 }

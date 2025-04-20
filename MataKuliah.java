@@ -1,4 +1,5 @@
 public class MataKuliah {
+
     String kodeMK, namaMK;
     int sks;
 
@@ -15,7 +16,7 @@ public class MataKuliah {
     }
 
     public void tampilMataKuliah() {
-        System.out.println("Kode MK: " + kodeMK + " | Nama: " + namaMK + " | SKS: " + sks);
+        System.out.println("Kode MK : " + kodeMK + " | Nama : " + namaMK + " | SKS : " + sks);
     }
 
     public static void tampilkanSemua() {
@@ -23,4 +24,5 @@ public class MataKuliah {
             mk.tampilMataKuliah();
         }
     }
+
 }
