@@ -50,25 +50,4 @@ public class Penilaian {
         tampilkanSemua();
     }
 
-    public static void cariDanTampilkanByNIM() {
-        Scanner input = new Scanner(System.in);
-        System.out.print("Masukkan NIM mahasiswa yang dicari : ");
-        String nim = input.nextLine();
-
-        Penilaian hasil = null;
-        for (Penilaian p : daftarPenilaian) {
-            if (p.mahasiswa.NIM.equals(nim)) {
-                hasil = p;
-                break;
-            }
-        }
-
-        if (hasil != null) {
-            System.out.println("Data Penilaian Ditemukan:");
-            hasil.tampilPenilaian();
-        } else {
-            System.out.println("Data tidak ditemukan.");
-        }
-    }
-
 }

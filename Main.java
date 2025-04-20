@@ -32,7 +32,7 @@ public class Main {
                     Penilaian.urutkanBerdasarkanNilaiAkhir();
                     break;
                 case 5:
-                    Penilaian.cariDanTampilkanByNIM();
+                    Mahasiswa.cariDanTampilkanByNIM();
                     break;
                 case 0:
                     System.out.println("Terima kasih!");
