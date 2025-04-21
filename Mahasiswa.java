@@ -25,6 +25,7 @@ public class Mahasiswa {
         }
     }
 
+    //sequential search
     public static void cariDanTampilkanByNIM() {
         Scanner input = new Scanner(System.in);
         System.out.print("Masukkan NIM mahasiswa yang dicari : ");
@@ -42,6 +43,37 @@ public class Mahasiswa {
             System.out.println("Mahasiswa Ditemukan:");
             hasil.tampilMahasiswa();
         } else {
+            System.out.println("Data mahasiswa tidak ditemukan.");
+        }
+    }
+
+    //binary search
+    public static void binarySearchByNIM() {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Masukkan NIM mahasiswa yang dicari : ");
+        String nim = input.nextLine();
+    
+        int left = 0;
+        int right = daftarMahasiswa.length - 1;
+        boolean found = false;
+    
+        while (left <= right) {
+            int mid = (left + right) / 2;
+            int comparison = daftarMahasiswa[mid].NIM.compareTo(nim);
+    
+            if (comparison == 0) {
+                System.out.println("Mahasiswa Ditemukan:");
+                daftarMahasiswa[mid].tampilMahasiswa();
+                found = true;
+                break;
+            } else if (comparison < 0) {
+                left = mid + 1;
+            } else {
+                right = mid - 1;
+            }
+        }
+    
+        if (!found) {
             System.out.println("Data mahasiswa tidak ditemukan.");
         }
     }

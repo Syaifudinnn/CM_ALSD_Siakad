@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class Penilaian {
 
     Mahasiswa mahasiswa;
@@ -37,6 +35,7 @@ public class Penilaian {
         }
     }
 
+    //bubble sort (desc)
     public static void urutkanBerdasarkanNilaiAkhir() {
         for (int i = 0; i < daftarPenilaian.length - 1; i++) {
             for (int j = 0; j < daftarPenilaian.length - i - 1; j++) {
@@ -46,6 +45,81 @@ public class Penilaian {
                     daftarPenilaian[j + 1] = temp;
                 }
             }
+        }
+        tampilkanSemua();
+    }
+
+    public static void bubbleSortAsc() {
+        for (int i = 0; i < daftarPenilaian.length - 1; i++) {
+            for (int j = 0; j < daftarPenilaian.length - i - 1; j++) {
+                if (daftarPenilaian[j].nilaiAkhir > daftarPenilaian[j + 1].nilaiAkhir) {
+                    Penilaian temp = daftarPenilaian[j];
+                    daftarPenilaian[j] = daftarPenilaian[j + 1];
+                    daftarPenilaian[j + 1] = temp;
+                }
+            }
+        }
+        tampilkanSemua();
+    }
+
+    //selection sort (desc)
+    public static void selectionSortBerdasarkanNilaiAkhir() {
+        for (int i = 0; i < daftarPenilaian.length - 1; i++) {
+            int maxIndex = i;
+            for (int j = i + 1; j < daftarPenilaian.length; j++) {
+                if (daftarPenilaian[j].nilaiAkhir > daftarPenilaian[maxIndex].nilaiAkhir) {
+                    maxIndex = j;
+                }
+            }
+            if (maxIndex != i) {
+                Penilaian temp = daftarPenilaian[i];
+                daftarPenilaian[i] = daftarPenilaian[maxIndex];
+                daftarPenilaian[maxIndex] = temp;
+            }
+        }
+        tampilkanSemua();
+    }
+
+    public static void selectionSortAsc() {
+        for (int i = 0; i < daftarPenilaian.length - 1; i++) {
+            int minIndex = i;
+            for (int j = i + 1; j < daftarPenilaian.length; j++) {
+                if (daftarPenilaian[j].nilaiAkhir < daftarPenilaian[minIndex].nilaiAkhir) {
+                    minIndex = j;
+                }
+            }
+            if (minIndex != i) {
+                Penilaian temp = daftarPenilaian[i];
+                daftarPenilaian[i] = daftarPenilaian[minIndex];
+                daftarPenilaian[minIndex] = temp;
+            }
+        }
+        tampilkanSemua();
+    }
+
+    //insertion sort (desc)
+    public static void insertionSortBerdasarkanNilaiAkhir() {
+        for (int i = 1; i < daftarPenilaian.length; i++) {
+            Penilaian key = daftarPenilaian[i];
+            int j = i - 1;
+            while (j >= 0 && daftarPenilaian[j].nilaiAkhir < key.nilaiAkhir) {
+                daftarPenilaian[j + 1] = daftarPenilaian[j];
+                j--;
+            }
+            daftarPenilaian[j + 1] = key;
+        }
+        tampilkanSemua();
+    }
+
+    public static void insertionSortAsc() {
+        for (int i = 1; i < daftarPenilaian.length; i++) {
+            Penilaian key = daftarPenilaian[i];
+            int j = i - 1;
+            while (j >= 0 && daftarPenilaian[j].nilaiAkhir > key.nilaiAkhir) {
+                daftarPenilaian[j + 1] = daftarPenilaian[j];
+                j--;
+            }
+            daftarPenilaian[j + 1] = key;
         }
         tampilkanSemua();
     }
